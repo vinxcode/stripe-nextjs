@@ -24,7 +24,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div>
         <h1>Product to purchase</h1>
-        <button onClick={handlePurchase}>purchase</button>
+        <button onClick={handlePurchase} className="bg-gray-200">purchase</button>
       </div>
     </main>
   );
