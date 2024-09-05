@@ -7,6 +7,7 @@ export default function Home() {
     const res = await fetch('/api/checkout', {
       method: "POST",
       body: JSON.stringify({
+        id: 1,
         name: "T-shirt Real Madrid",
         price: 10000,
         quantity: 1,

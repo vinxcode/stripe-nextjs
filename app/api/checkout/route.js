@@ -5,7 +5,7 @@ const stripe = new Stripe("sk_test_51PvEPa00nfg5PEF0MjpoHYT3Fo8xtnLYuPZifXRlgZp8
 
 export async function POST(request) {
 
-    const { name, price, quantity} = await request.json()
+    const { id, name, price, quantity } = await request.json()
 
     const session = await stripe.checkout.sessions.create({
         success_url: "http://localhost:3000/success",
@@ -23,6 +23,9 @@ export async function POST(request) {
                 quantity: quantity,
             }
         ],
+        metadata: {
+            productId: id
+        },
         mode: "payment",
     })
 
